@@ -68,6 +68,26 @@ MergedData$activity <- factor(MergedData$activity, levels = activityLabels[,1], 
 MergedData$subject <- as.factor(MergedData$subject)
 ###################################
 
+
+###################################
+
+names(MergedData)<-gsub("Acc", "Accelerometer", names(MergedData))
+names(MergedData)<-gsub("Gyro", "Gyroscope", names(MergedData))
+names(MergedData)<-gsub("BodyBody", "Body", names(MergedData))
+names(MergedData)<-gsub("Mag", "Magnitude", names(MergedData))
+names(MergedData)<-gsub("^t", "Time", names(MergedData))
+names(MergedData)<-gsub("^f", "Frequency", names(MergedData))
+names(MergedData)<-gsub("tBody", "TimeBody", names(MergedData))
+names(MergedData)<-gsub("-mean()", "Mean", names(MergedData), ignore.case = TRUE)
+names(MergedData)<-gsub("-std()", "STD", names(MergedData), ignore.case = TRUE)
+names(MergedData)<-gsub("-freq()", "Frequency", names(MergedData), ignore.case = TRUE)
+names(MergedData)<-gsub("angle", "Angle", names(MergedData))
+names(MergedData)<-gsub("gravity", "Gravity", names(MergedData))
+
+View(names(MergedData))
+###################################
+
+
 ###################################
 # group by subject and activity and summarise using mean
 humanActivityMeans <- MergedData %>% 
