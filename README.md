@@ -15,3 +15,7 @@ The R script, `run_analysis.R`, does the following:
    variable for each subject and activity pair.
 
 The end result is stored in the file `tidy.txt`.
+
+
+## Quiz solutions
+Th Quiz#.R files are solution scripts to the course quizzes.
